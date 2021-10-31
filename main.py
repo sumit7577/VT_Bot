@@ -32,5 +32,5 @@ def echo(client, message):
                 message.reply_text("Please provide a valid hash value")
         
 
-
-app.run()
+if __name__ == "__main__":
+    app.run()
