@@ -11,7 +11,12 @@ app = Client("vt_bot",api_id=appId,api_hash=appHash,bot_token="2072883509:AAHJyA
 
 @app.on_message(filters.text & filters.private)
 def echo(client, message):
-    fullName = message.from_user.first_name + " " + message.from_user.last_name
+    firstName = message.from_user.first_name
+    lastName = message.from_user.last_name
+    try:
+        fullName = firstName+ " " + lastName
+    except:
+        fullName = firstName
     if message.text == "/start":
         message.reply_text(f"Hlo {fullName} welcome to the VT_Premium Downloader bot.Please Provide a hash to get the file Contents.")
     else:
